@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.custom.preference;
+package com.android.settings.ryzen.preference;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
-import androidx.preference.DropDownPreference;
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceDataStore;
 import androidx.preference.PreferenceViewHolder;
 
@@ -27,23 +27,23 @@ import androidx.preference.PreferenceViewHolder;
  * A Preference which can automatically remove itself from the hierarchy
  * based on constraints set in XML.
  */
-public abstract class SelfRemovingDropDownPreference extends DropDownPreference {
+public abstract class SelfRemovingListPreference extends ListPreference {
 
     private final ConstraintsHelper mConstraints;
 
-    public SelfRemovingDropDownPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SelfRemovingListPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mConstraints = new ConstraintsHelper(context, attrs, this);
         setPreferenceDataStore(new DataStore());
     }
 
-    public SelfRemovingDropDownPreference(Context context, AttributeSet attrs) {
+    public SelfRemovingListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mConstraints = new ConstraintsHelper(context, attrs, this);
         setPreferenceDataStore(new DataStore());
     }
 
-    public SelfRemovingDropDownPreference(Context context) {
+    public SelfRemovingListPreference(Context context) {
         super(context);
         mConstraints = new ConstraintsHelper(context, null, this);
         setPreferenceDataStore(new DataStore());
@@ -95,12 +95,12 @@ public abstract class SelfRemovingDropDownPreference extends DropDownPreference 
     private class DataStore extends PreferenceDataStore {
         @Override
         public void putString(String key, String value) {
-            SelfRemovingDropDownPreference.this.putString(key, value);
+            SelfRemovingListPreference.this.putString(key, value);
         }
 
         @Override
         public String getString(String key, String defaultValue) {
-            return SelfRemovingDropDownPreference.this.getString(key, defaultValue);
+            return SelfRemovingListPreference.this.getString(key, defaultValue);
         }
     }
 }

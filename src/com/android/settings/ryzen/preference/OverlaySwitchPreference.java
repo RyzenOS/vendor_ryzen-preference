@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.custom.preference;
+package com.android.settings.ryzen.preference;
 
 import static android.os.UserHandle.USER_CURRENT;
 

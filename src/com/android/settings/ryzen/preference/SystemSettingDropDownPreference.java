@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.custom.preference;
+package com.android.settings.ryzen.preference;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -22,12 +22,12 @@ import android.util.AttributeSet;
 import android.provider.Settings;
 
 
-public class SystemSettingListPreference extends SelfRemovingListPreference {
-    public SystemSettingListPreference(Context context, AttributeSet attrs, int defStyle) {
+public class SystemSettingDropDownPreference extends SelfRemovingDropDownPreference {
+    public SystemSettingDropDownPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public SystemSettingListPreference(Context context, AttributeSet attrs) {
+    public SystemSettingDropDownPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
